@@ -28,4 +28,3 @@ for _ in range(0,casos):
   print('caso '+str(_+1)+':\n')
   ordenamient(lista_int)
   print('\n')
-
