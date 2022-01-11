@@ -1,34 +1,38 @@
 import math
 
-def minimoBilletes(lista : list):
-  columnas = lista[0] + 1
-  arrBilletes = lista[1:]
-  largoBilletes = len(arrBilletes) + 1
 
-  matriz = [[math.inf for __ in range(0, columnas)] for _ in range(0, largoBilletes)]
+def getMinBills(arr: list):
+    totalColumns = arr[0] + 1
+    billsArr = arr[1:]
+    arrLength = len(billsArr) + 1
+    # Create matrix
+    A = [[math.inf for __ in range(totalColumns)] for _ in range(arrLength)]
+    # Set initial values for the first column of the matrix
+    for i in range(arrLength):
+        A[i][0] = 0
 
-  for i in range(0, largoBilletes):
-    matriz[i][0] = 0
-  
-  for i in range(1, largoBilletes):
-    prev = i-1
-    billetesActual = arrBilletes[prev]
-    for j in range(1, columnas):
-      itemPrev = matriz[prev][j]
-      if billetesActual <= j:
-        k = j - billetesActual
-        matriz[i][j] = min(1 + matriz[i][k], itemPrev)
-      else:
-        matriz[i][j] = prev
-  print(matriz[-1][-1])
+    for i in range(1, arrLength):
+        prevIndex = i - 1
+        currentBill = billsArr[prevIndex]
+        for j in range(1, totalColumns):
+            prevItem = A[prevIndex][j]
+            if(currentBill <= j):
+                k = j - currentBill
+                A[i][j] = min(1 + A[i][k], prevItem)
+            else:
+                A[i][j] = prevItem
 
-casos = int(input())
-arr=[]
+    print(A[-1][-1])
 
-for _ in range(0, casos):
-  lista = [int(x) for x in input().split()]
-  arr.append(lista)
 
-for __ in arr:
-  minimoBilletes(__)
+def main():
+    cases = int(input())
+    finalArr = []
+    for _ in range(cases):
+        finalArr.append([int(x) for x in input().split()])
 
+    for arr in finalArr:
+        getMinBills(arr)
+
+
+main()
