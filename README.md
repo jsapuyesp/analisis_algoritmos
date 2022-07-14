@@ -6,4 +6,3 @@ El contenido presente en este repositorio es un espacio en el cual se guardan lo
 
 Agradecimiento especial al docente Julian Moreno Cadavid por el excelente curso que nos brindó y los conocimientos que fueron adquiridos durante este tiempo.
 
-
