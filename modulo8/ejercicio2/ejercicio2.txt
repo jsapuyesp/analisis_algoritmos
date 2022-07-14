@@ -1,9 +1,0 @@
-4
-1 1 CAI
-10 1 LGU
-1 2 CAI
-3 2 LGU
-2
-3 3 LGU
-4 4 LGU
-0
