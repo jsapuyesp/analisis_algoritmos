@@ -1,4 +1,4 @@
-analisis_algoritmos
+## Análisis y Diseño de Algoritmos
 
 ### Universidad Nacional de Colombia
 
